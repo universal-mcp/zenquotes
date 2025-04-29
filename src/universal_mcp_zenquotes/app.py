@@ -1,23 +1,31 @@
-from universal_mcp.applications import APIApplication
-from universal_mcp.integrations import Integration
+from universal_mcp.applications.application import APIApplication
+
 
 class ZenquotesApp(APIApplication):
-    """
-    Base class for Universal MCP Applications.
-    """
-    def __init__(self, integration: Integration = None, **kwargs) -> None:
-        super().__init__(name="zenquotes", integration=integration, **kwargs)
+    def __init__(self, **kwargs) -> None:
+        super().__init__(name="zenquotes", **kwargs)
 
-    def run(self):
+    def get_quote(self) -> str:
         """
-        Example tool implementation.
+        Fetches a random inspirational quote from the Zen Quotes API.
+
+        Returns:
+            A formatted string containing the quote and its author in the format 'quote - author'
+
+        Raises:
+            RequestException: If the HTTP request to the Zen Quotes API fails
+            JSONDecodeError: If the API response contains invalid JSON
+            IndexError: If the API response doesn't contain any quotes
+            KeyError: If the quote data doesn't contain the expected 'q' or 'a' fields
+
+        Tags:
+            fetch, quotes, api, http, important
         """
-        print(f"Running the main task for {self.name}...")
-        print("Hello from ZenquotesApp!")
-        return "Task completed successfully."
+        url = "https://zenquotes.io/api/random"
+        response = self._get(url)
+        data = response.json()
+        quote_data = data[0]
+        return f"{quote_data['q']} - {quote_data['a']}"
 
     def list_tools(self):
-        """
-        Lists the available tools (methods) for this application.
-        """
-        return [self.run]
+        return [self.get_quote]
