@@ -1,4 +1,4 @@
-Welcome to the **Universal MCP Zenquotes** 
+Welcome to the **Universal MCP Zenquotes API**.
 This project provides a starting point for your API application, generated automatically by **MCP CLI** to help you kickstart your development quickly.
 ---
 ## 📋 Prerequisites
