@@ -45,7 +45,7 @@ The MCP inspector should now be running. Check the console output for the exact 
 
 ## 🛠️ Tool List
 
-This is automatically generated from OpenAPI schema for the Universal Mcp Trello API.
+This is automatically generated from OpenAPI schema for the Universal Mcp Zenquotes API.
 
 
 | Tool | Description |
