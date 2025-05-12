@@ -1,5 +1,5 @@
 
-from universal_mcp.servers.server import SingleMCPServer
+from universal_mcp.servers import SingleMCPServer
 
 from universal_mcp_zenquotes.app import ZenquotesApp
 
