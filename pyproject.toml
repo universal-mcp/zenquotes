@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "universal_mcp_zenquotes"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Universal MCP Application: universal_mcp_zenquotes"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -41,7 +41,7 @@ universal_mcp_zenquotes = "universal_mcp_zenquotes:main"
 
 [project.urls]
 Homepage = "" # Add project URL later
-Repository = "" # Add repository URL later
+Repository = "https://github.com/universal-mcp/zenquotes" # Add repository URL later
 
 # --- Hatch Configuration ---
 [tool.hatch.version]
